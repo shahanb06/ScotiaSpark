@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, Animated, Easing, StyleSheet } from 'react-native';
-import Svg, { Path, Circle, Defs, LinearGradient, Stop, G, Text as SvgText } from 'react-native-svg';
+import Svg, { Path, Circle, G, Text as SvgText } from 'react-native-svg';
 import { colors, typography, spacing, radii } from '../theme';
 import { ProgressBar } from './Charts';
 
@@ -81,15 +81,16 @@ export function SceneJourney({
 
       <View style={styles.svgWrap}>
         <Svg viewBox="0 0 280 180" width="100%" height={180}>
-          <Defs>
-            <LinearGradient id="path-grad" x1="0" x2="1" y1="1" y2="0">
-              <Stop offset={`${progressPercent}%`} stopColor={colors.sage} />
-              <Stop offset={`${progressPercent}%`} stopColor={colors.terra} stopOpacity={0.5} />
-            </LinearGradient>
-          </Defs>
           <Path
             d="M 30 150 C 30 100, 80 80, 140 90 C 200 100, 250 60, 250 30"
-            stroke="url(#path-grad)"
+            stroke={colors.divider}
+            strokeWidth={6}
+            fill="none"
+            strokeLinecap="round"
+          />
+          <Path
+            d="M 30 150 C 30 100, 80 80, 140 90 C 200 100, 250 60, 250 30"
+            stroke={colors.scotiaRed}
             strokeWidth={6}
             fill="none"
             strokeLinecap="round"
@@ -119,7 +120,7 @@ export function SceneJourney({
               strokeLinejoin="round"
             />
           </G>
-          <SvgText x={232} y={10} fontSize={9} fontFamily="RobotoMono_500Medium" fill={colors.terra}>
+          <SvgText x={232} y={10} fontSize={9} fontFamily="FrutigerMedium" fill={colors.terra}>
             {nextRewardPoints} PTS
           </SvgText>
         </Svg>
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
   },
   kicker: {
-    fontFamily: 'Inter_500Medium',
+    fontFamily: 'FrutigerMedium',
     fontSize: 10,
     letterSpacing: 0.6,
     color: colors.slate,
@@ -157,13 +158,13 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   youHave: {
-    fontFamily: 'Inter_400Regular',
+    fontFamily: 'Frutiger',
     fontSize: 13,
     color: colors.slate,
     marginBottom: 2,
   },
   points: {
-    fontFamily: 'RobotoMono_500Medium',
+    fontFamily: 'FrutigerBold',
     fontSize: 32,
     color: colors.ink,
     marginBottom: spacing.md,
@@ -177,13 +178,13 @@ const styles = StyleSheet.create({
     marginVertical: spacing.lg,
   },
   workingLabel: {
-    fontFamily: 'Inter_400Regular',
+    fontFamily: 'Frutiger',
     fontSize: 13,
     color: colors.slate,
     marginBottom: 4,
   },
   goalTitle: {
-    fontFamily: 'SourceSerifPro_400Regular',
+    fontFamily: 'ITCCentury',
     fontSize: 16,
     color: colors.ink,
     marginBottom: spacing.md,
@@ -192,18 +193,18 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   progressText: {
-    fontFamily: 'RobotoMono_400Regular',
+    fontFamily: 'FrutigerMedium',
     fontSize: 12,
     color: colors.slate,
     marginBottom: 4,
   },
   unlockText: {
-    fontFamily: 'RobotoMono_400Regular',
+    fontFamily: 'FrutigerMedium',
     fontSize: 12,
     color: colors.slate,
   },
   earnedToday: {
-    fontFamily: 'Inter_400Regular',
+    fontFamily: 'Frutiger',
     fontSize: 13,
     color: colors.slate,
     marginTop: spacing.sm,

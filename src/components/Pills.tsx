@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   text: {
-    fontFamily: 'NunitoSans_500Medium',
+    fontFamily: 'FrutigerMedium',
     fontSize: 12,
     lineHeight: 16,
   },

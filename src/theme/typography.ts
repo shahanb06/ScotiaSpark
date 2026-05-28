@@ -1,3 +1,11 @@
+import type { TextStyle } from 'react-native';
+
+const ui = 'Frutiger';
+const uiMedium = 'FrutigerMedium';
+const uiBold = 'FrutigerBold';
+const editorial = 'ITCCentury';
+const tabularNums: TextStyle['fontVariant'] = ['tabular-nums'];
+
 export const spacing = {
   xs: 4,
   sm: 8,
@@ -11,9 +19,9 @@ export const spacing = {
 
 export const radii = {
   sm: 8,
-  md: 12,
-  lg: 16,
-  xl: 20,
+  md: 10,
+  lg: 12,
+  xl: 16,
   card: 18,
   softCard: 14,
   button: 12,
@@ -23,36 +31,32 @@ export const radii = {
 };
 
 export const typography = {
-  // Libre Baskerville (ITC Century substitute) — screen titles & editorial moments
-  titleHero: { fontFamily: 'LibreBaskerville_400Regular', fontSize: 28, lineHeight: 34, color: '#1B1B1B' },
-  titleScreen: { fontFamily: 'LibreBaskerville_400Regular', fontSize: 22, lineHeight: 28, color: '#1B1B1B' },
-  titleCard: { fontFamily: 'LibreBaskerville_400Regular', fontSize: 17, lineHeight: 22, color: '#1B1B1B' },
-  h1: { fontFamily: 'LibreBaskerville_400Regular', fontSize: 32, lineHeight: 40, color: '#1B1B1B' },
-  h2: { fontFamily: 'LibreBaskerville_400Regular', fontSize: 22, lineHeight: 30, color: '#1B1B1B' },
-  callout: { fontFamily: 'LibreBaskerville_400Regular', fontSize: 15, lineHeight: 22, color: '#1B1B1B' },
+  titleHero: { fontFamily: editorial, fontSize: 28, lineHeight: 34, color: '#333333' },
+  titleScreen: { fontFamily: editorial, fontSize: 22, lineHeight: 28, color: '#333333' },
+  titleCard: { fontFamily: editorial, fontSize: 18, lineHeight: 24, color: '#333333' },
+  h1: { fontFamily: editorial, fontSize: 32, lineHeight: 40, color: '#333333' },
+  h2: { fontFamily: editorial, fontSize: 22, lineHeight: 30, color: '#333333' },
+  callout: { fontFamily: editorial, fontSize: 15, lineHeight: 22, color: '#333333' },
 
-  // Nunito Sans (Frutiger substitute) — body, UI, labels
-  h3: { fontFamily: 'NunitoSans_600SemiBold', fontSize: 18, lineHeight: 24, color: '#1B1B1B' },
-  body: { fontFamily: 'NunitoSans_400Regular', fontSize: 15, lineHeight: 22, color: '#1B1B1B' },
-  bodyMedium: { fontFamily: 'NunitoSans_500Medium', fontSize: 15, lineHeight: 22, color: '#1B1B1B' },
-  bodyEmphasis: { fontFamily: 'NunitoSans_500Medium', fontSize: 15, lineHeight: 22, color: '#1B1B1B' },
-  bodySlate: { fontFamily: 'NunitoSans_400Regular', fontSize: 13, lineHeight: 18, color: '#5C6A7D' },
-  smallBody: { fontFamily: 'NunitoSans_400Regular', fontSize: 14, lineHeight: 20, color: '#5C6A7D' },
-  micro: { fontFamily: 'NunitoSans_400Regular', fontSize: 11, lineHeight: 15, color: '#8B95A4' },
-  metadata: { fontFamily: 'NunitoSans_500Medium', fontSize: 13, lineHeight: 18, color: '#5C6A7D' },
-  kicker: { fontFamily: 'NunitoSans_500Medium', fontSize: 10, lineHeight: 13, letterSpacing: 0.6, color: '#5C6A7D', textTransform: 'uppercase' as const },
-  label: { fontFamily: 'NunitoSans_500Medium', fontSize: 10, lineHeight: 14, letterSpacing: 1.2, textTransform: 'uppercase' as const, color: '#5C6A7D' },
-  button: { fontFamily: 'NunitoSans_500Medium', fontSize: 14, lineHeight: 18 },
-  tabLabel: { fontFamily: 'NunitoSans_500Medium', fontSize: 10, lineHeight: 13 },
+  h3: { fontFamily: uiBold, fontSize: 18, lineHeight: 24, color: '#333333' },
+  body: { fontFamily: ui, fontSize: 15, lineHeight: 22, color: '#333333' },
+  bodyMedium: { fontFamily: uiMedium, fontSize: 15, lineHeight: 22, color: '#333333' },
+  bodyEmphasis: { fontFamily: uiBold, fontSize: 15, lineHeight: 22, color: '#333333' },
+  bodySlate: { fontFamily: ui, fontSize: 13, lineHeight: 18, color: '#6B7280' },
+  smallBody: { fontFamily: ui, fontSize: 14, lineHeight: 20, color: '#6B7280' },
+  micro: { fontFamily: ui, fontSize: 12, lineHeight: 16, color: '#6B7280' },
+  metadata: { fontFamily: uiMedium, fontSize: 13, lineHeight: 18, color: '#6B7280' },
+  kicker: { fontFamily: uiBold, fontSize: 11, lineHeight: 14, letterSpacing: 0, color: '#6B7280', textTransform: 'uppercase' as const },
+  label: { fontFamily: uiBold, fontSize: 11, lineHeight: 15, letterSpacing: 0, textTransform: 'uppercase' as const, color: '#6B7280' },
+  button: { fontFamily: uiBold, fontSize: 15, lineHeight: 20 },
+  tabLabel: { fontFamily: uiMedium, fontSize: 11, lineHeight: 14 },
 
-  // Roboto Mono — every number
-  monoHero: { fontFamily: 'RobotoMono_500Medium', fontSize: 32, lineHeight: 36, color: '#1B1B1B' },
-  monoLarge: { fontFamily: 'RobotoMono_500Medium', fontSize: 22, lineHeight: 26, color: '#1B1B1B' },
-  monoMedium: { fontFamily: 'RobotoMono_400Regular', fontSize: 15, lineHeight: 20, color: '#1B1B1B' },
-  monoSmall: { fontFamily: 'RobotoMono_400Regular', fontSize: 12, lineHeight: 16, color: '#5C6A7D' },
+  monoHero: { fontFamily: uiBold, fontSize: 34, lineHeight: 40, color: '#333333', fontVariant: tabularNums },
+  monoLarge: { fontFamily: uiBold, fontSize: 24, lineHeight: 30, color: '#333333', fontVariant: tabularNums },
+  monoMedium: { fontFamily: uiMedium, fontSize: 15, lineHeight: 20, color: '#333333', fontVariant: tabularNums },
+  monoSmall: { fontFamily: uiMedium, fontSize: 12, lineHeight: 16, color: '#6B7280', fontVariant: tabularNums },
 
-  // Legacy aliases
-  numberHero: { fontFamily: 'RobotoMono_500Medium', fontSize: 36, lineHeight: 44, color: '#1B1B1B' },
-  numberBody: { fontFamily: 'RobotoMono_400Regular', fontSize: 16, lineHeight: 24, color: '#1B1B1B' },
-  numberLarge: { fontFamily: 'RobotoMono_500Medium', fontSize: 34, lineHeight: 42, color: '#1B1B1B' },
+  numberHero: { fontFamily: uiBold, fontSize: 36, lineHeight: 44, color: '#333333', fontVariant: tabularNums },
+  numberBody: { fontFamily: uiMedium, fontSize: 16, lineHeight: 24, color: '#333333', fontVariant: tabularNums },
+  numberLarge: { fontFamily: uiBold, fontSize: 34, lineHeight: 42, color: '#333333', fontVariant: tabularNums },
 };

@@ -1,68 +1,56 @@
 export const colors = {
-  // Backgrounds
+  // ScotiaSpark brand system
   bg: '#FFFFFF',
-  bgDeep: '#ECE7DE',
-  card: '#FFFDF9',
-  pureCream: '#F5F1EA',
-  warmTint: '#EFE8DE',
-  border: '#EAE5DC',
-
-  // Text
-  ink: '#1B1B1B',
-  slate: '#5C6A7D',
-  mute: '#8B95A4',
-
-  // Brand
-  scotia: '#EC111A',
-  scotiaSoft: '#FCE8E9',
-
-  // Semantic
-  sage: '#6B8E7B',
-  sageTint: '#EAF1ED',
-  terra: '#B5664A',
-  terraTint: '#F4E6DE',
-  amber: '#C89B5A',
-  amberTint: '#FAEEDA',
-  info: '#5A7D8C',
-  infoTint: '#EAEEF2',
-
-  // UI
-  white: '#FFFFFF',
-  transparent: 'transparent',
-  overlay: 'rgba(27,27,27,0.4)',
-  hairline: 'rgba(27,27,27,0.08)',
-
-  // Legacy aliases
   background: '#FFFFFF',
-  cardSurface: '#FFFDF9',
-  cardBorder: '#EAE5DC',
-  softCard: '#EFE8DE',
-  primaryText: '#1B1B1B',
-  secondaryText: '#5C6A7D',
-  tertiaryText: '#8B95A4',
+  card: '#FFFFFF',
+  cardSurface: '#FFFFFF',
+  white: '#FFFFFF',
+  ink: '#333333',
+  primaryText: '#333333',
+  black: '#333333',
+  slate: '#6B7280',
+  secondaryText: '#6B7280',
+  mute: '#6B7280',
+  tertiaryText: '#6B7280',
+  lightGrey: '#F5F5F5',
+  softCard: '#F5F5F5',
+  divider: '#E6E6E6',
+  border: '#E6E6E6',
+  cardBorder: '#E6E6E6',
+  hairline: '#E6E6E6',
+  scotia: '#EC111A',
   scotiaRed: '#EC111A',
-  scotiaRedSoft: '#FCE8E9',
-  terracotta: '#B5664A',
-  terracottaTint: '#F4E6DE',
-  softAmber: '#C89B5A',
-  softAmberTint: '#FAEEDA',
-  infoTeal: '#5A7D8C',
-  infoTealTint: '#EAEEF2',
+  red: '#EC111A',
+  transparent: 'transparent',
+  overlay: 'rgba(51,51,51,0.42)',
+
+  // Compatibility aliases mapped back into the approved palette.
+  bgDeep: '#F5F5F5',
+  pureCream: '#FFFFFF',
+  warmTint: '#F5F5F5',
+  scotiaSoft: '#F5F5F5',
+  scotiaRedSoft: '#F5F5F5',
+  sage: '#333333',
+  sageTint: '#F5F5F5',
+  terra: '#EC111A',
+  terraTint: '#F5F5F5',
+  amber: '#6B7280',
+  amberTint: '#F5F5F5',
+  info: '#6B7280',
+  infoTint: '#F5F5F5',
+  terracotta: '#EC111A',
+  terracottaTint: '#F5F5F5',
+  softAmber: '#6B7280',
+  softAmberTint: '#F5F5F5',
+  infoTeal: '#333333',
+  infoTealTint: '#F5F5F5',
 };
 
 export const shadows = {
   card: {
-    shadowColor: '#1B1B1B',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.04,
-    shadowRadius: 8,
-    elevation: 2,
+    boxShadow: '0 8px 24px rgba(51, 51, 51, 0.08)',
   },
   sheet: {
-    shadowColor: '#1B1B1B',
-    shadowOffset: { width: 0, height: -8 },
-    shadowOpacity: 0.18,
-    shadowRadius: 24,
-    elevation: 12,
+    boxShadow: '0 -12px 30px rgba(51, 51, 51, 0.18)',
   },
 };

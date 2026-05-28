@@ -20,7 +20,7 @@ export function LearnScreen() {
 
   const rewardState = demo.getRewardState();
   const currentGoal = getCurrentGoal(rewardState);
-  const currentProgress = currentGoal ? getProgressForGoal(currentGoal, rewardState) : 1;
+  const currentProgress = currentGoal ? getProgressForGoal(rewardState, currentGoal.id) / 100 : 1;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -56,7 +56,7 @@ export function LearnScreen() {
           <ProgressBar progress={progress} color={colors.sage} />
           {demo.certificateEarned && (
             <View style={styles.certBadge}>
-              <Text style={styles.certText}>🎓 Certificate earned</Text>
+              <Text style={styles.certText}>Certificate earned</Text>
             </View>
           )}
         </Card>
@@ -70,7 +70,7 @@ export function LearnScreen() {
             <View style={styles.lessonHeader}>
               <View style={[styles.lessonPill, lesson.completed && styles.lessonPillDone]}>
                 <Text style={[styles.lessonPillText, lesson.completed && styles.lessonPillTextDone]}>
-                  {lesson.completed ? '✓ Complete' : `Lesson ${lesson.id}`}
+                  {lesson.completed ? 'Complete' : `Lesson ${lesson.id}`}
                 </Text>
               </View>
             </View>

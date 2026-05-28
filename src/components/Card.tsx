@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, ViewStyle } from 'react-native';
+import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { colors, radii, shadows, spacing } from '../theme';
 
 interface CardProps {
   children: React.ReactNode;
   variant?: 'primary' | 'soft' | 'hero';
   heroColor?: string;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }
 
 export function Card({ children, variant = 'primary', heroColor, style }: CardProps) {

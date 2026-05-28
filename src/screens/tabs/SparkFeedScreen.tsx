@@ -4,7 +4,7 @@ import {
   TextInput, Image,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { colors, spacing, typography, radii } from '../../theme';
+import { colors, spacing, typography, radii, shadows } from '../../theme';
 import { Card, Button, MiniChart, RiskPill, TimeHorizonPill, TypePill } from '../../components';
 import { Toast } from '../../components/Toast';
 import { Logo } from '../../components/Logo';
@@ -362,7 +362,7 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     marginTop: -spacing.lg,
     marginBottom: spacing.lg,
-    ...colors.shadows?.card,
+    ...shadows.card,
   },
   searchResultRow: {
     flexDirection: 'row',

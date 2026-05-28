@@ -1,8 +1,9 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from '@expo-google-fonts/nunito-sans';
+import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { NunitoSans_400Regular, NunitoSans_500Medium, NunitoSans_600SemiBold } from '@expo-google-fonts/nunito-sans';
 import { LibreBaskerville_400Regular, LibreBaskerville_700Bold } from '@expo-google-fonts/libre-baskerville';
 import { RobotoMono_400Regular, RobotoMono_500Medium } from '@expo-google-fonts/roboto-mono';
@@ -11,6 +12,13 @@ import { AppNavigator } from './src/navigation/AppNavigator';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
+    Frutiger: NunitoSans_400Regular,
+    FrutigerMedium: NunitoSans_500Medium,
+    FrutigerBold: NunitoSans_600SemiBold,
+    ITCCentury: LibreBaskerville_400Regular,
+    ITCCenturyBold: LibreBaskerville_700Bold,
+    Inter_400Regular,
+    Inter_500Medium,
     NunitoSans_400Regular,
     NunitoSans_500Medium,
     NunitoSans_600SemiBold,

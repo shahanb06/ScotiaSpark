@@ -110,10 +110,10 @@ const initialLessons: LessonData[] = [
 ];
 
 const getInitialState = (): DemoState => ({
-  userName: 'Aria',
+  userName: 'Alex',
   userAge: 24,
   investingSince: null,
-  hasOnboarded: false,
+  hasOnboarded: true,
   selectedGoal: null,
   timeHorizon: 5,
   riskComfort: null,
@@ -121,11 +121,12 @@ const getInitialState = (): DemoState => ({
   idleCashAmount: 4200.00,
   idleCashDays: 89,
   accounts: [
-    { id: 'fhsa', type: 'FHSA', name: 'First Home Savings', balance: 0, goal: 40000, allocation: ['Equities', 'Bonds'] },
-    { id: 'tfsa', type: 'TFSA', name: 'Tax-Free Savings', balance: 1250.00, goal: 25000, allocation: ['Equities'] },
+    { id: 'tfsa', type: 'TFSA', name: 'Scotia Tax-Free Investment Account', balance: 4830.08, goal: 25000, allocation: ['Equities', 'Bonds', 'Cash'] },
+    { id: 'fhsa', type: 'FHSA', name: 'Scotia First Home Savings Account', balance: 5820.15, goal: 40000, allocation: ['Equities', 'Bonds', 'Cash'] },
+    { id: 'personal', type: 'Non-registered', name: 'Personal Investing', balance: 1800.00, goal: 10000, allocation: ['Equities', 'Bonds', 'Cash'] },
     { id: 'cheq', type: 'Chequing', name: 'Chequing', balance: 8450.00, allocation: [] },
   ],
-  totalInvestable: 1250.00,
+  totalInvestable: 12450.23,
   scenePoints: 0,
   unlockedGoalIds: [],
   lifetimeInvested: 0,

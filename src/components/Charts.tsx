@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { colors, typography } from '../theme';
-import Svg, { Path, Defs, LinearGradient as SvgGradient, Stop } from 'react-native-svg';
+import { View, StyleSheet } from 'react-native';
+import { colors } from '../theme';
+import Svg, { Line, Path } from 'react-native-svg';
 
 interface MiniChartProps {
   data?: number[];
@@ -12,7 +12,7 @@ interface MiniChartProps {
 
 export function MiniChart({ 
   data = [40, 42, 38, 45, 48, 44, 50, 52, 49, 55, 58, 54, 60, 62, 58, 65, 68, 64, 70, 72],
-  color = colors.sage,
+  color = colors.scotiaRed,
   width = 120,
   height = 40,
 }: MiniChartProps) {
@@ -35,19 +35,11 @@ export function MiniChart({
     pathD += ` C ${cpx1} ${prev.y} ${cpx2} ${curr.y} ${curr.x} ${curr.y}`;
   }
 
-  // Fill path
-  const fillD = pathD + ` L ${width} ${height} L 0 ${height} Z`;
-
   return (
     <Svg width={width} height={height}>
-      <Defs>
-        <SvgGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-          <Stop offset="0" stopColor={color} stopOpacity="0.15" />
-          <Stop offset="1" stopColor={color} stopOpacity="0" />
-        </SvgGradient>
-      </Defs>
-      <Path d={fillD} fill="url(#chartGrad)" />
-      <Path d={pathD} stroke={color} strokeWidth={1.5} fill="none" strokeLinecap="round" />
+      <Line x1="0" y1={height - 1} x2={width} y2={height - 1} stroke={colors.divider} strokeWidth={1} />
+      <Line x1="0" y1={Math.round(height * 0.52)} x2={width} y2={Math.round(height * 0.52)} stroke={colors.divider} strokeWidth={1} />
+      <Path d={pathD} stroke={color} strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </Svg>
   );
 }
@@ -59,7 +51,7 @@ interface ProgressBarProps {
   height?: number;
 }
 
-export function ProgressBar({ progress, color = colors.sage, backgroundColor = colors.softCard, height = 6 }: ProgressBarProps) {
+export function ProgressBar({ progress, color = colors.scotiaRed, backgroundColor = colors.divider, height = 6 }: ProgressBarProps) {
   return (
     <View style={[styles.progressBg, { backgroundColor, height, borderRadius: height / 2 }]}>
       <View style={[styles.progressFill, { backgroundColor: color, width: `${Math.min(progress * 100, 100)}%`, height, borderRadius: height / 2 }]} />
